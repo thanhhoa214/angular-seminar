@@ -5,7 +5,16 @@
     alt="Food alternative"
   />
   <div class="card-body">
-    <h5 class="card-title">Salad healthy for chymer</h5>
+    <h5 class="card-title">
+      <i *ngIf="!loved" class="far fa-heart" (click)="toggleLove()"></i>
+      <i
+        *ngIf="loved"
+        class="fas fa-heart text-danger"
+        (click)="toggleLove()"
+      ></i>
+      <br />
+      Salad healthy for chymer
+    </h5>
     <p class="card-text">
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
