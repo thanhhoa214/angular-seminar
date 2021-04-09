@@ -1,27 +1,26 @@
 <div class="container mt-4">
+  <button type="button" class="btn btn-success my-2" (click)="loadBlogs()">
+    Load Blogs
+  </button>
   <div class="row">
-    <div class="card mx-2" style="width: 18rem" *ngFor="let i of [1, 2, 3]">
-      <img
-        src="assets/images/food1.jpeg"
-        class="card-img-top"
-        alt="Food alternative"
-      />
+    <div class="card m-2" style="width: 18rem" *ngFor="let blog of blogs">
+      <img [src]="blog.thumbnail" class="card-img-top" alt="Food alternative" />
       <div class="card-body" [class.bg-pink]="loved">
-        <h5 class="card-title">
-          <i *ngIf="!loved" class="far fa-heart" (click)="toggleLove()"></i>
-          <i
-            *ngIf="loved"
-            class="fas fa-heart text-danger"
-            (click)="toggleLove()"
-          ></i>
-          <br />
-          Salad healthy for chymer
-        </h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <i *ngIf="!loved" class="far fa-heart" (click)="toggleLove()"></i>
+        <i
+          *ngIf="loved"
+          class="fas fa-heart text-danger"
+          (click)="toggleLove()"
+        ></i>
+        {{ blog.numberOfLikes }}
+        <h6 class="card-title">
+          {{ blog.title }}
+        </h6>
+        <p class="card-text small">
+          {{ blog.content | slice: 0:55 }}
+          {{ blog.content.length > 55 ? "..." : "" }}
         </p>
-        <a href="#" class="btn btn-primary">Read more</a>
+        <a href="#" class="btn btn-outline-primary">Read more ...</a>
       </div>
     </div>
   </div>
