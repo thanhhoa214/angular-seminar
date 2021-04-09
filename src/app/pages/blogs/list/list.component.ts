@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Blog } from 'src/app/models/blog';
 import { environment } from 'src/environments/environment';
@@ -15,14 +15,10 @@ export class ListComponent {
   loved = false;
 
   constructor(private httpClient: HttpClient) {
-    this.loadBlogs();
+    this.blogs$ = this.httpClient.get<Blog[]>(BLOGS_API_URL);
   }
 
   toggleLove(): void {
     this.loved = !this.loved;
-  }
-
-  loadBlogs(): void {
-    this.blogs$ = this.httpClient.get<Blog[]>(BLOGS_API_URL);
   }
 }
