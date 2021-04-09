@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <button type="button" class="btn btn-success my-2" (click)="loadBlogs()">
+    Load Blogs
+  </button>
+  <div class="row">
+    <div
+      class="card m-2"
+      style="width: 18rem"
+      *ngFor="let blog of blogs$ | async"
+    >
+      <img [src]="blog.thumbnail" class="card-img-top" alt="Food alternative" />
+      <div class="card-body" [class.bg-pink]="loved">
+        <i *ngIf="!loved" class="far fa-heart" (click)="toggleLove()"></i>
+        <i
+          *ngIf="loved"
+          class="fas fa-heart text-danger"
+          (click)="toggleLove()"
+        ></i>
+        {{ blog.numberOfLikes }}
+        <h6 class="card-title">
+          {{ blog.title }}
+        </h6>
+        <p class="card-text small">
+          {{ blog.content | slice: 0:55 }}
+          {{ blog.content.length > 55 ? "..." : "" }}
+        </p>
+        <a routerLink="../detail" class="btn btn-outline-primary"
+          >Read more ...</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
