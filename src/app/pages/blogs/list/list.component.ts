@@ -11,7 +11,7 @@ const BLOGS_API_URL = environment.apiUrl + '/blogs';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  blogs$: Observable<Blog[]> | undefined = undefined;
+  blogs$: Observable<Blog[]>;
   loved = false;
 
   constructor(private httpClient: HttpClient) {
