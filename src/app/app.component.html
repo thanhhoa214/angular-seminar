@@ -3,7 +3,11 @@
     Load Blogs
   </button>
   <div class="row">
-    <div class="card m-2" style="width: 18rem" *ngFor="let blog of blogs">
+    <div
+      class="card m-2"
+      style="width: 18rem"
+      *ngFor="let blog of blogs$ | async"
+    >
       <img [src]="blog.thumbnail" class="card-img-top" alt="Food alternative" />
       <div class="card-body" [class.bg-pink]="loved">
         <i *ngIf="!loved" class="far fa-heart" (click)="toggleLove()"></i>

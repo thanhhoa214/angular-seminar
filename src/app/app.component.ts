@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Blog } from './models/blog';
+const BLOGS_API_URL = environment.apiUrl + '/blogs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { Blog } from './models/blog';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  blogs: Blog[] = [];
+  blogs$: Observable<Blog[]> | null = null;
   loved = false;
 
   constructor(private httpClient: HttpClient) {}
@@ -19,13 +21,6 @@ export class AppComponent {
   }
 
   loadBlogs(): void {
-    const blogsApiUrl = environment.apiUrl + '/blogs';
-    console.log(blogsApiUrl);
-
-    this.httpClient.get<Blog[]>(blogsApiUrl).subscribe((data) => {
-      console.log(data);
-
-      this.blogs = data;
-    });
+    this.blogs$ = this.httpClient.get<Blog[]>(BLOGS_API_URL);
   }
 }
