@@ -5,7 +5,7 @@ import { DetailComponent } from './pages/blogs/detail/detail.component';
 
 const routes: Routes = [
   { path: 'blogs/list', component: ListComponent },
-  { path: 'blogs/detail', component: DetailComponent },
+  { path: 'blogs/:id', component: DetailComponent },
   { path: '', redirectTo: 'blogs/list', pathMatch: 'full' },
 ];
 

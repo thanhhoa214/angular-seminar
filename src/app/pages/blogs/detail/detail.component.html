@@ -1,9 +1,5 @@
-<div class="container text-center">
-  <img
-    class="w-75 mt-4 min-height-20rem"
-    src="https://lp-cms-production.imgix.net/2019-06/8dd3f49b214370ed8b6f42bba8d46e1e-vietnam.jpeg"
-    alt=""
-  />
-  <h1>Title Here</h1>
-  <p>Full description</p>
+<div class="container text-center" *ngIf="blog">
+  <img class="w-75 mt-4 min-height-20rem" [src]="blog.thumbnail" alt="" />
+  <h1>{{ blog.title }}</h1>
+  <p>{{ blog.content }}</p>
 </div>

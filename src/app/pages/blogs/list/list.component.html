@@ -21,7 +21,7 @@
           {{ blog.content | slice: 0:55 }}
           {{ blog.content.length > 55 ? "..." : "" }}
         </p>
-        <a routerLink="../detail" class="btn btn-outline-primary"
+        <a [routerLink]="'../' + blog.id" class="btn btn-outline-primary"
           >Read more ...</a
         >
       </div>
