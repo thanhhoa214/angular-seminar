@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-angublog-9ded7": {
+      "hosting": {
+        "angublog": [
+          "fir-angublog-9ded7"
+        ]
+      }
+    }
+  }
+}

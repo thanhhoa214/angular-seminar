@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Blog } from 'src/app/models/blog';
+import { Blog } from 'src/app/models/blog.model';
 import { environment } from 'src/environments/environment';
 const BLOGS_API_URL = environment.apiUrl + '/blogs';
 

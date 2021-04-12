@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './pages/blogs/list/list.component';
 import { DetailComponent } from './pages/blogs/detail/detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FirebaseModule } from './firebase.module';
 @NgModule({
   declarations: [AppComponent, ListComponent, DetailComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FirebaseModule],
   providers: [],
   bootstrap: [AppComponent],
 })

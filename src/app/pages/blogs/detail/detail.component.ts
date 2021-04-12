@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { Blog } from 'src/app/models/blog';
+import { Blog } from 'src/app/models/blog.model';
 import { environment } from 'src/environments/environment';
 const BLOGS_API_URL = environment.apiUrl + '/blogs';
 
